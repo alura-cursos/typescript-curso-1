@@ -9,7 +9,7 @@ export class NegociacaoController {
   private inputQuantidade: HTMLInputElement;
   private inputValor: HTMLInputElement;
   private negociacoes = new Negociacoes();
-  private negociaçõesView = new NegociacoesView("#negociacoesView");
+  private negociaçõesView = new NegociacoesView("#negociacoesView", true);
   private alertView = new AlertView("#alertView");
 
   constructor() {
@@ -20,7 +20,11 @@ export class NegociacaoController {
   }
 
   adiciona(): void {
-    const negociacao = this.criaNegociacao();
+    const negociacao = Negociacao.createdEscope(
+      this.inputData.value,
+      this.inputQuantidade.value,
+      this.inputValor.value
+    );
     if (!this.isDateUtil(negociacao.data)) {
       this.alertView.update("Apenas negociações de em dias uteis são aceitas");
       return;
@@ -35,13 +39,6 @@ export class NegociacaoController {
       date.getDay() > DiasDaSemana.DOMINGO &&
       date.getDay() < DiasDaSemana.SABADO
     );
-  }
-  private criaNegociacao(): Negociacao {
-    const exp = /-/g;
-    const date = new Date(this.inputData.value.replace(exp, ","));
-    const quantidade = parseInt(this.inputQuantidade.value);
-    const valor = parseFloat(this.inputValor.value);
-    return new Negociacao(date, quantidade, valor);
   }
 
   private limparFormulario(): void {

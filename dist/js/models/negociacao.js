@@ -11,4 +11,11 @@ export class Negociacao {
     get volume() {
         return this.quantidade * this.valor;
     }
+    static createdEscope(dateStr, quantStr, valueStr) {
+        const exp = /-/g;
+        const date = new Date(dateStr.replace(exp, ","));
+        const quantidade = parseInt(quantStr);
+        const valor = parseFloat(valueStr);
+        return new Negociacao(date, quantidade, valor);
+    }
 }

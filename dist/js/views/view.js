@@ -1,9 +1,16 @@
 export class View {
-    constructor(seletor) {
+    constructor(seletor, scapeBool) {
+        this.scape = false;
         this.element = document.querySelector(seletor);
+        if (scapeBool) {
+            this.scape = scapeBool;
+        }
     }
     update(model) {
-        const template = this.template(model);
+        let template = this.template(model);
+        if (this.scape) {
+            template = template.replace(/<script>[\s\S]*?<\/script>/, "");
+        }
         this.element.innerHTML = template;
     }
 }
