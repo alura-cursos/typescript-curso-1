@@ -4,11 +4,18 @@ export class Negociacao {
         this.quantidade = quantidade;
         this.valor = valor;
     }
-    get volume() {
-        return this.quantidade * this.valor;
-    }
     get data() {
         const data = new Date(this._data.getTime());
         return data;
+    }
+    get volume() {
+        return this.quantidade * this.valor;
+    }
+    static createdEscope(dateStr, quantStr, valueStr) {
+        const exp = /-/g;
+        const date = new Date(dateStr.replace(exp, ","));
+        const quantidade = parseInt(quantStr);
+        const valor = parseFloat(valueStr);
+        return new Negociacao(date, quantidade, valor);
     }
 }
