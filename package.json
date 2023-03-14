@@ -8,7 +8,9 @@
     "server": "lite-server --baseDir=dist",
     "start": "concurrently \"npm run watch\" \"npm run server\"",
     "compile": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "check-types": "tsc --noemit",
+    "eslint": "eslint"
   },
   "author": "",
   "license": "ISC",
