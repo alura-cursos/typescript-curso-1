@@ -1,3 +1,17 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib"
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "workbench.colorCustomizations": {
+        /* error squiggles */
+        "editorError.foreground": "#ff5500",
+      
+        /* warning squggles */
+        "editorWarning.foreground": "#ffc400",
+      
+        /* info squiggles */
+        "editorInfo.foreground": "#35ffab"
+    },
+    "files.associations": {
+        ".js": "javascript",
+        ".html": "html"
+    }
 }
