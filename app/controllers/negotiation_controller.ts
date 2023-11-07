@@ -26,6 +26,7 @@ export class NegotiationController {
       const date = new Date(this.inputData.value.replace(exp, ','));
       const quantity = parseInt(this.inputQuantity.value);
       const value = parseFloat(this.inputValue.value);
+
       return new Negotiation(date, quantity, value);
     }
 
