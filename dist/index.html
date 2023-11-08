@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -7,67 +7,77 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
   </head>
 
-  <body class="bg-dark h-100">
+  <body class="bg-zinc">
     <div class="container">
-      <div class="row justify-content-center">
-        <h1 class="text-white my-5">Negociações</h1>
+      <div
+        style="height: 35rem"
+        class="row align-items-center justify-content-center"
+      >
+        <div class="d-flex align-items-end shadow-sm rounded p-3">
+          <h1 class="display-4 text-light">Negociações</h1>
+        </div>
+
+        <form class="form text-center text-light w-100">
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="data" class="h5 font-weight-normal">Data</label>
+                <input
+                  type="date"
+                  id="data"
+                  class="form-control"
+                  required
+                  autofocus
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="quantidade" class="h5 font-weight-normal"
+                  >Quantidade</label
+                >
+                <input
+                  type="number"
+                  min="1"
+                  step="1"
+                  id="quantidade"
+                  class="form-control"
+                  value="1"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="valor" class="h5 font-weight-normal">Valor</label>
+            <input
+              id="valor"
+              type="number"
+              class="form-control"
+              min="0.01"
+              step="0.01"
+              value="0.0"
+              required
+            />
+          </div>
+
+          <button
+            class="btn btn-info rounded-pill w-25 align-self-center"
+            type="submit"
+          >
+            Adicionar
+          </button>
+        </form>
+
+        <div id="messageView"></div>
       </div>
     </div>
 
-    <div id="mensagemView"></div>
-
-    <div class="container mt-5">
-      <form class="form text-center text-white">
-        <div class="row">
-          <div class="col">
-            <div class="form-group">
-              <label for="data">Data</label>
-              <input
-                type="date"
-                id="data"
-                class="form-control"
-                required
-                autofocus
-              />
-            </div>
-          </div>
-          <div class="col">
-            <div class="form-group">
-              <label for="quantidade">Quantidade</label>
-              <input
-                type="number"
-                min="1"
-                step="1"
-                id="quantidade"
-                class="form-control"
-                value="1"
-                required
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group w-100">
-          <label for="valor">Valor</label>
-          <input
-            id="valor"
-            type="number"
-            class="form-control"
-            min="0.01"
-            step="0.01"
-            value="0.0"
-            required
-          />
-        </div>
-
-        <button class="btn btn-primary w-50 align-self-center" type="submit">
-          Incluir
-        </button>
-      </form>
+    <div class="container">
+      <div id="negotiationView"></div>
     </div>
 
-    <br />
-    <br />
     <script type="module" src="js/app.js"></script>
   </body>
 </html>

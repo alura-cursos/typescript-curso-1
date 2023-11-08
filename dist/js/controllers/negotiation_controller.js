@@ -1,17 +1,23 @@
 import { Negotiation } from '../models/negotiation.js';
 import { Negotiations } from '../models/negotiations.js';
+import { MessageView } from './../views/message-view.js';
+import { NegotiationView } from '../views/negotiation-view.js';
 export class NegotiationController {
     constructor() {
         this.negotiations = new Negotiations();
+        this.messageView = new MessageView('#messageView');
+        this.negotiationsView = new NegotiationView('#negotiationView');
         this.inputData = document.querySelector('#data');
         this.inputQuantity = document.querySelector('#quantidade');
         this.inputValue = document.querySelector('#valor');
+        this.negotiationsView.updated(this.negotiations);
     }
     add() {
         const negotiation = this.createNegotiation();
         negotiation.data.setDate(12);
         this.negotiations.add(negotiation);
-        console.log(this.negotiations.list());
+        this.negotiationsView.updated(this.negotiations);
+        this.messageView.updated('Negociação adicionada na tabela com sucesso');
         this.clearForm();
     }
     createNegotiation() {
