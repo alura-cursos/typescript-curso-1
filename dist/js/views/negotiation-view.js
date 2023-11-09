@@ -32,4 +32,3 @@ export class NegotiationView extends View {
     return new Intl.DateTimeFormat().format(data);
   }
 }
-// <td>${item.data.getDate()}/${item.data.getMonth() + 1}/${item.data.getFullYear()}</td>

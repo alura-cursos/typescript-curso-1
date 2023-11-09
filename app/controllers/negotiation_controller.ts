@@ -9,7 +9,7 @@ export class NegotiationController {
   private inputQuantity: HTMLInputElement;
   private inputValue: HTMLInputElement;
   private negotiations = new Negotiations();
-  private messageView = new MessageView('#messageView');
+  private messageView = new MessageView('#messageView', true);
   private negotiationsView = new NegotiationView('#negotiationView');
 
   constructor() {
@@ -20,7 +20,11 @@ export class NegotiationController {
   }
 
   public add(): void {
-    const negotiation = this.createNegotiation();
+    const negotiation = Negotiation.created(
+      this.inputData.value,
+      this.inputQuantity.value,
+      this.inputValue.value
+    );
 
     if (!this.isDayUtil(negotiation.data)) {
       this.messageView.updated('Negociação feitas apenas em dias uteis!');
@@ -36,15 +40,6 @@ export class NegotiationController {
     return (
       data.getDay() > DaysOfWeek.SUNDAY && data.getDay() < DaysOfWeek.SATURDAY
     );
-  }
-
-  private createNegotiation(): Negotiation {
-    const exp = /-/g;
-    const date = new Date(this.inputData.value.replace(exp, ','));
-    const quantity = parseInt(this.inputQuantity.value);
-    const value = parseFloat(this.inputValue.value);
-
-    return new Negotiation(date, quantity, value);
   }
 
   private clearForm(): void {
