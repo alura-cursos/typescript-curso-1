@@ -1,3 +1,5 @@
+import { loginTimeExecution } from "../decorators/login-time-execution.js";
+
 export abstract class View<T> {
   protected element: HTMLElement;
   private scape = false;
@@ -20,8 +22,8 @@ export abstract class View<T> {
 
   protected abstract template(model: T): string;
 
+  @loginTimeExecution(true)
   public updated(model: T): void {
-    const timeOne = performance.now();
     let template = this.template(model);
 
     if (this.scape) {
@@ -29,8 +31,5 @@ export abstract class View<T> {
     }
 
     this.element.innerHTML = template;
-
-    const timeTwo = performance.now();
-    console.log(`tempo que o método update ${(timeOne - timeTwo)/1000} segundos`);
   }
 }

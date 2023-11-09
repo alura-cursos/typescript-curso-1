@@ -3,6 +3,7 @@ import { Negotiations } from '../models/negotiations.js';
 import { MessageView } from './../views/message-view.js';
 import { NegotiationView } from '../views/negotiation-view.js';
 import { DaysOfWeek } from '../enums/daysOfWeek.js';
+import { loginTimeExecution } from '../decorators/login-time-execution.js';
 
 export class NegotiationController {
   private inputData: HTMLInputElement;
@@ -21,6 +22,7 @@ export class NegotiationController {
     this.negotiationsView.updated(this.negotiations);
   }
 
+  @loginTimeExecution()
   public add(): void {
     const negotiation = Negotiation.created(
       this.inputData.value,
