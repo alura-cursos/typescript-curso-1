@@ -1,5 +1,5 @@
-import { Negotiations } from '../models/negotiations.js'
-import { View } from './view.js'
+import { Negotiations } from '../models/negotiations.js';
+import { View } from './view.js';
 
 export class NegotiationView extends View<Negotiations> {
   protected template(model: Negotiations): string {
@@ -23,16 +23,16 @@ export class NegotiationView extends View<Negotiations> {
                   <td>${item.quantity}</td>
                   <td>${item.value}</td>
                 </tr>
-              `
+              `;
             })
             .join('')}
         </tbody>
       </table>
-    `
+    `;
   }
 
   private formatDate(data: Date): string {
-    return new Intl.DateTimeFormat().format(data)
+    return new Intl.DateTimeFormat().format(data);
   }
 }
 

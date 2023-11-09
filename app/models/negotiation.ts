@@ -6,11 +6,11 @@ export class Negotiation {
   ) {}
 
   get volume(): number {
-    return this.quantity * this.value
+    return this.quantity * this.value;
   }
 
   get data(): Date {
-    const data = new Date(this._data.getTime())
-    return data
+    const data = new Date(this._data.getTime());
+    return data;
   }
 }
