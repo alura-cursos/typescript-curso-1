@@ -1,7 +1,14 @@
 export class View {
   constructor(select, scape) {
     this.scape = false;
-    this.element = document.querySelector(select);
+    const element = document.querySelector(select);
+    if (element) {
+      this.element = element;
+    } else {
+      throw new Error(
+        `Element not found, verify ${select} element exist of DOM`
+      );
+    }
     if (scape) {
       this.scape = scape;
     }
