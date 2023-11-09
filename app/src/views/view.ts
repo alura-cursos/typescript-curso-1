@@ -21,6 +21,7 @@ export abstract class View<T> {
   protected abstract template(model: T): string;
 
   public updated(model: T): void {
+    const timeOne = performance.now();
     let template = this.template(model);
 
     if (this.scape) {
@@ -28,5 +29,8 @@ export abstract class View<T> {
     }
 
     this.element.innerHTML = template;
+
+    const timeTwo = performance.now();
+    console.log(`tempo que o método update ${(timeOne - timeTwo)/1000} segundos`);
   }
 }
