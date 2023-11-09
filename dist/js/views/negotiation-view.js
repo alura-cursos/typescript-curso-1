@@ -17,7 +17,7 @@ export class NegotiationView extends View {
             .map(item => {
             return `
                 <tr class="font-weight-bold text-light">
-                  <td>${new Intl.DateTimeFormat().format(item.data)}</td>
+                  <td>${this.formatDate(item.data)}</td>
                   <td>${item.quantity}</td>
                   <td>${item.value}</td>
                 </tr>
@@ -27,6 +27,9 @@ export class NegotiationView extends View {
         </tbody>
       </table>
     `;
+    }
+    formatDate(data) {
+        return new Intl.DateTimeFormat().format(data);
     }
 }
 // <td>${item.data.getDate()}/${item.data.getMonth() + 1}/${item.data.getFullYear()}</td>
