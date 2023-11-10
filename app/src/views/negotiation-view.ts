@@ -1,11 +1,10 @@
 import { scape } from '../decorators/scape.js';
-import { Negotiations } from '../models/negotiations.js';
+import { type Negotiations } from '../models/negotiations.js';
 import { View } from './view.js';
 
 export class NegotiationView extends View<Negotiations> {
-
   @scape
-  protected template(model: Negotiations): string {
+  protected template (model: Negotiations): string {
     return `
       <table class="table table-striped table-hover shadow-sm">
         <thead class="thead-dark">
@@ -34,7 +33,7 @@ export class NegotiationView extends View<Negotiations> {
     `;
   }
 
-  private formatDate(data: Date): string {
+  private formatDate (data: Date): string {
     return new Intl.DateTimeFormat().format(data);
   }
 }

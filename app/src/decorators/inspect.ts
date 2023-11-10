@@ -1,11 +1,11 @@
-export function inspect() {
+export function inspect () {
   return function (
     target: any,
     propertyKey: string,
     descriptor: PropertyDescriptor
   ) {
     const methodOrigin = descriptor.value;
-    descriptor.value = function (...args: Array<any>) {
+    descriptor.value = function (...args: any[]) {
       console.log(`--- Método ${propertyKey}`);
       console.log(`--- parâmetros: ${JSON.stringify(args)} ---`);
 

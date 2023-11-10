@@ -9,7 +9,7 @@ export class View {
         }
     }
     updated(model) {
-        let template = this.template(model);
+        const template = this.template(model);
         this.element.innerHTML = template;
     }
 }
