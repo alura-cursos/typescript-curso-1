@@ -8,9 +8,9 @@ export function scape(
     let methodReturn = methodOrigin.apply(this, args);
 
     if (typeof methodReturn === 'string') {
-      console.log(
+      /* console.log(
         `@scape action of class ${this.constructor.name} for method ${propertyKey}`
-      );
+      ); */
 
       methodReturn = methodReturn.replace(/<script>[\s\S]*?<\/script>/, '');
     }

@@ -1,7 +1,7 @@
 export abstract class View<T> {
   protected element: HTMLElement;
 
-  constructor (select: string) {
+  constructor(select: string) {
     const element = document.querySelector(select);
 
     if (element) {
@@ -13,9 +13,9 @@ export abstract class View<T> {
     }
   }
 
-  protected abstract template (model: T): string;
+  protected abstract template(model: T): string;
 
-  public updated (model: T): void {
+  public updated(model: T): void {
     const template = this.template(model);
 
     this.element.innerHTML = template;

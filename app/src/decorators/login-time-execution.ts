@@ -24,7 +24,7 @@ export function loginTimeExecution(inSeconds: boolean = false) {
         } ${units}`
       );
 
-      returnMethod;
+      return returnMethod;
     };
 
     return descriptor;
