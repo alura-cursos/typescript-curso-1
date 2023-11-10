@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "lite-server --baseDir=dist",
+    "server": "lite-server --baseDir=app",
     "start": "concurrently \"npm run watch\" \"npm run server\"",
     "compile": "tsc",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "prettier": "prettier --write ."
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^6.0.0",
     "lite-server": "^2.6.1",
+    "prettier": "^3.0.3",
     "typescript": "^4.2.2"
   }
 }
