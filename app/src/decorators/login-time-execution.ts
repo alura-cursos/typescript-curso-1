@@ -5,13 +5,13 @@ export function loginTimeExecution(inSeconds: boolean = false) {
     descriptor: PropertyDescriptor
   ) {
     const methodOrigin = descriptor.value;
-    descriptor.value = function (...args: Array<any>){
+    descriptor.value = function (...args: Array<any>) {
       let division = 1;
-      let units = 'milliseconds'
+      let units = 'milliseconds';
 
       if (inSeconds) {
         division = 1000;
-        units ='seconds';
+        units = 'seconds';
       }
 
       const timeExecutionMethodInitial = performance.now();
@@ -20,7 +20,7 @@ export function loginTimeExecution(inSeconds: boolean = false) {
 
       console.log(
         `${propertyKey}, tempo de execução: ${
-          (timeExecutionMethodInitial - timeExecutionMethodFinal)/division
+          (timeExecutionMethodInitial - timeExecutionMethodFinal) / division
         } ${units}`
       );
 

@@ -1,7 +1,10 @@
+import { scape } from '../decorators/scape.js';
 import { Negotiations } from '../models/negotiations.js';
 import { View } from './view.js';
 
 export class NegotiationView extends View<Negotiations> {
+
+  @scape
   protected template(model: Negotiations): string {
     return `
       <table class="table table-striped table-hover shadow-sm">
