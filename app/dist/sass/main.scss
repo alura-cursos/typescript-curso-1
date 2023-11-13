@@ -1,0 +1,43 @@
+@import './global/global';
+
+body {
+  background-color: $zinc-800;
+}
+
+.button_default {
+  @extend .btn;
+
+  background: $indigo-500;
+  color: $zinc-200;
+
+  font-weight: 600;
+  padding-inline: 2rem;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: $indigo-700;
+    color: $indigo-200;
+  }
+}
+
+.form-default {
+  @extend .form-control;
+
+  padding-inline: 2rem;
+  border: 2px solid $purple-600;
+  border-radius: 50px;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $zinc-300;
+
+  transition: all 0.2s ease-in-out;
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    border-color: $indigo-500;
+    box-shadow: none;
+  }
+}

@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "lite-server --baseDir=app",
+    "sass": "sass --watch --style=compressed ./app/dist/sass/main.scss:./app/dist/css/main.css",
     "start": "concurrently \"npm run watch\" \"npm run server\"",
     "compile": "tsc",
     "watch": "tsc -w",

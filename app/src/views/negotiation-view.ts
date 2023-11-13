@@ -6,8 +6,8 @@ export class NegotiationView extends View<Negotiations> {
   @scape
   protected template(model: Negotiations): string {
     return `
-      <table class="table table-striped table-hover shadow-sm">
-        <thead class="thead-dark">
+      <table class="table table-sm table-info table-striped table-hover shadow-sm">
+        <thead>
           <tr class="text-uppercase">
             <th class="text-info">Data</th>
             <th class="text-info">Quantidade</th>

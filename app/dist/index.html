@@ -4,73 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Negociações</title>
-    <link rel="stylesheet" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <link rel="shortcut icon" href="../assets/bate-papo.png" type="image/png" />
   </head>
 
-  <body class="bg-zinc">
+  <body>
     <div class="container">
       <div
         style="height: 35rem"
         class="row align-items-center justify-content-center"
       >
-        <div class="d-flex align-items-end shadow-sm rounded p-3">
-          <h1 class="display-4 text-light">Negociações</h1>
+        <div class="d-flex justify-content-center shadow-sm rounded p-3">
+          <h1 class="display-5 text-light">Negociações</h1>
         </div>
 
         <form class="form text-center text-light w-100">
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                <label for="data" class="h5 font-weight-normal">Data</label>
+          <div class="row mb-3">
+            <div class="col-md">
+              <div class="form-group mb-4">
+                <label for="valor" class="h5 fw-normal">Valor</label>
                 <input
-                  type="date"
-                  id="data"
-                  class="form-control"
+                  id="valor"
+                  type="number"
+                  class="form-default"
                   required
-                  autofocus
+                  placeholder="Digite um valor"
                 />
               </div>
             </div>
-            <div class="col">
+            <div class="col-md">
               <div class="form-group">
-                <label for="quantidade" class="h5 font-weight-normal"
-                  >Quantidade</label
-                >
+                <label for="quantidade" class="h5 fw-normal">Quantidade</label>
                 <input
                   type="number"
-                  min="1"
-                  step="1"
                   id="quantidade"
-                  class="form-control"
-                  value="1"
+                  class="form-default"
                   required
                   placeholder="Digite a quantidade"
                 />
               </div>
             </div>
+            <div class="col-md">
+              <div class="form-group mb-4">
+                <label for="data" class="h5 fw-normal">Data</label>
+                <input
+                  type="date"
+                  id="data"
+                  class="form-default"
+                  required
+                  autofocus
+                />
+              </div>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="valor" class="h5 font-weight-normal">Valor</label>
-            <input
-              id="valor"
-              type="number"
-              class="form-control"
-              min="0.01"
-              step="0.01"
-              value="0.0"
-              required
-              placeholder="Digite um valor"
-            />
-          </div>
+          <div class="d-flex justify-content-center gap-2">
+            <button
+              class="button_default rounded-pill align-self-center"
+              type="submit"
+            >
+              Adicionar
+            </button>
 
-          <button
-            class="btn btn-info rounded-pill w-25 align-self-center"
-            type="submit"
-          >
-            Adicionar
-          </button>
+            <button
+              id="btnImport"
+              class="button_default rounded-pill align-self-center"
+            >
+              Importar
+            </button>
+          </div>
         </form>
 
         <div id="messageView"></div>
