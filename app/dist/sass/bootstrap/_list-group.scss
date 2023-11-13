@@ -38,7 +38,7 @@
 
   > .list-group-item::before {
     // Increments only this instance of the section counter
-    content: counters(section, ".") ". ";
+    content: counters(section, '.') '. ';
     counter-increment: section;
   }
 }
@@ -75,11 +75,13 @@
 .list-group-item {
   position: relative;
   display: block;
-  padding: var(--#{$prefix}list-group-item-padding-y) var(--#{$prefix}list-group-item-padding-x);
+  padding: var(--#{$prefix}list-group-item-padding-y)
+    var(--#{$prefix}list-group-item-padding-x);
   color: var(--#{$prefix}list-group-color);
   text-decoration: if($link-decoration == none, null, none);
   background-color: var(--#{$prefix}list-group-bg);
-  border: var(--#{$prefix}list-group-border-width) solid var(--#{$prefix}list-group-border-color);
+  border: var(--#{$prefix}list-group-border-width) solid
+    var(--#{$prefix}list-group-border-color);
 
   &:first-child {
     @include border-top-radius(inherit);
@@ -109,7 +111,9 @@
     border-top-width: 0;
 
     &.active {
-      margin-top: calc(-1 * var(--#{$prefix}list-group-border-width)); // stylelint-disable-line function-disallowed-list
+      margin-top: calc(
+        -1 * var(--#{$prefix}list-group-border-width)
+      ); // stylelint-disable-line function-disallowed-list
       border-top-width: var(--#{$prefix}list-group-border-width);
     }
   }
@@ -128,12 +132,16 @@
 
       > .list-group-item {
         &:first-child:not(:last-child) {
-          @include border-bottom-start-radius(var(--#{$prefix}list-group-border-radius));
+          @include border-bottom-start-radius(
+            var(--#{$prefix}list-group-border-radius)
+          );
           @include border-top-end-radius(0);
         }
 
         &:last-child:not(:first-child) {
-          @include border-top-end-radius(var(--#{$prefix}list-group-border-radius));
+          @include border-top-end-radius(
+            var(--#{$prefix}list-group-border-radius)
+          );
           @include border-bottom-start-radius(0);
         }
 
@@ -146,7 +154,9 @@
           border-left-width: 0;
 
           &.active {
-            margin-left: calc(-1 * var(--#{$prefix}list-group-border-width)); // stylelint-disable-line function-disallowed-list
+            margin-left: calc(
+              -1 * var(--#{$prefix}list-group-border-width)
+            ); // stylelint-disable-line function-disallowed-list
             border-left-width: var(--#{$prefix}list-group-border-width);
           }
         }
@@ -154,7 +164,6 @@
     }
   }
 }
-
 
 // Flush list items
 //
@@ -173,7 +182,6 @@
   }
 }
 
-
 // scss-docs-start list-group-modifiers
 // List group contextual variants
 //
@@ -184,14 +192,22 @@
   .list-group-item-#{$state} {
     --#{$prefix}list-group-color: var(--#{$prefix}#{$state}-text-emphasis);
     --#{$prefix}list-group-bg: var(--#{$prefix}#{$state}-bg-subtle);
-    --#{$prefix}list-group-border-color: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-border-color: var(
+      --#{$prefix}#{$state}-border-subtle
+    );
     --#{$prefix}list-group-action-hover-color: var(--#{$prefix}emphasis-color);
-    --#{$prefix}list-group-action-hover-bg: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-action-hover-bg: var(
+      --#{$prefix}#{$state}-border-subtle
+    );
     --#{$prefix}list-group-action-active-color: var(--#{$prefix}emphasis-color);
-    --#{$prefix}list-group-action-active-bg: var(--#{$prefix}#{$state}-border-subtle);
+    --#{$prefix}list-group-action-active-bg: var(
+      --#{$prefix}#{$state}-border-subtle
+    );
     --#{$prefix}list-group-active-color: var(--#{$prefix}#{$state}-bg-subtle);
     --#{$prefix}list-group-active-bg: var(--#{$prefix}#{$state}-text-emphasis);
-    --#{$prefix}list-group-active-border-color: var(--#{$prefix}#{$state}-text-emphasis);
+    --#{$prefix}list-group-active-border-color: var(
+      --#{$prefix}#{$state}-text-emphasis
+    );
   }
 }
 // scss-docs-end list-group-modifiers

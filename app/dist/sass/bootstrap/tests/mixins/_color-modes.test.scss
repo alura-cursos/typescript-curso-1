@@ -1,13 +1,13 @@
 // stylelint-disable selector-attribute-quotes
 
-@import "../../functions";
-@import "../../variables";
-@import "../../variables-dark";
-@import "../../maps";
-@import "../../mixins";
+@import '../../functions';
+@import '../../variables';
+@import '../../variables-dark';
+@import '../../maps';
+@import '../../mixins';
 
-@include describe("global $color-mode-type: data") {
-  @include it("generates data attribute selectors for dark mode") {
+@include describe('global $color-mode-type: data') {
+  @include it('generates data attribute selectors for dark mode') {
     @include assert() {
       @include output() {
         @include color-mode(dark) {
@@ -21,11 +21,11 @@
         }
       }
       @include expect() {
-        [data-bs-theme=dark] .element {
+        [data-bs-theme='dark'] .element {
           color: var(--bs-primary-text-emphasis);
           background-color: var(--bs-primary-bg-subtle);
         }
-        [data-bs-theme=dark] {
+        [data-bs-theme='dark'] {
           --custom-color: #3a3ff8;
         }
       }
@@ -33,8 +33,8 @@
   }
 }
 
-@include describe("global $color-mode-type: media-query") {
-  @include it("generates media queries for dark mode") {
+@include describe('global $color-mode-type: media-query') {
+  @include it('generates media queries for dark mode') {
     $color-mode-type: media-query !global;
 
     @include assert() {

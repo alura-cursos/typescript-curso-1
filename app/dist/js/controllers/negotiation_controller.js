@@ -12,11 +12,13 @@ import { DaysOfWeek } from '../enums/daysOfWeek.js';
 import { loginTimeExecution } from '../decorators/login-time-execution.js';
 import { inspect } from '../decorators/inspect.js';
 import { domInjector } from '../decorators/dom-injector.js';
+import { NegotiationsService } from '../services/negotiations-services.js';
 export class NegotiationController {
     constructor() {
         this.negotiations = new Negotiations();
         this.messageView = new MessageView('#messageView');
         this.negotiationsView = new NegotiationView('#negotiationView');
+        this.negotiationsService = new NegotiationsService();
         this.negotiationsView.updated(this.negotiations);
     }
     add() {
@@ -26,8 +28,18 @@ export class NegotiationController {
             return;
         }
         this.negotiations.add(negotiation);
+        console.log(negotiation);
         this.clearForm();
         this.updatedView();
+    }
+    importData() {
+        this.negotiationsService.getNegotiationsToday()
+            .then(negotiationToday => {
+            for (let negotiation of negotiationToday) {
+                this.negotiations.add(negotiation);
+            }
+            this.negotiationsView.updated(this.negotiations);
+        });
     }
     isDayUtil(data) {
         return (data.getDay() > DaysOfWeek.SUNDAY && data.getDay() < DaysOfWeek.SATURDAY);

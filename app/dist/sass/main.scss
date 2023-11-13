@@ -24,20 +24,42 @@ body {
 .form-default {
   @extend .form-control;
 
+  width: 100%;
+
+  background-color: $zinc-700;
+
   padding-inline: 2rem;
-  border: 2px solid $purple-600;
+  border: 2px solid $indigo-400;
   border-radius: 50px;
 
   font-size: 1.1rem;
   font-weight: 600;
-  color: $zinc-300;
+  color: $zinc-500;
 
   transition: all 0.2s ease-in-out;
+
+  &::placeholder {
+    color: $zinc-400;
+  }
 
   &:focus,
   &:focus-visible {
     outline: none;
-    border-color: $indigo-500;
     box-shadow: none;
+
+    border-color: $indigo-500;
+
+    background-color: $zinc-800;
+    color: $indigo-300;
   }
+}
+
+.text-default {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.08rem;
+  color: $indigo-500 !important;
+}
+
+.text-table-indigo {
+  color: $indigo-300 !important;
 }

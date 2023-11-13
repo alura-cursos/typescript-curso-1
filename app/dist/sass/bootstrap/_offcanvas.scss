@@ -12,7 +12,8 @@
   --#{$prefix}offcanvas-border-width: #{$offcanvas-border-width};
   --#{$prefix}offcanvas-border-color: #{$offcanvas-border-color};
   --#{$prefix}offcanvas-box-shadow: #{$offcanvas-box-shadow};
-  --#{$prefix}offcanvas-transition: #{transform $offcanvas-transition-duration ease-in-out};
+  --#{$prefix}offcanvas-transition: #{transform $offcanvas-transition-duration
+    ease-in-out};
   --#{$prefix}offcanvas-title-line-height: #{$offcanvas-title-line-height};
   // scss-docs-end offcanvas-css-vars
 }
@@ -50,7 +51,8 @@
         top: 0;
         left: 0;
         width: var(--#{$prefix}offcanvas-width);
-        border-right: var(--#{$prefix}offcanvas-border-width) solid var(--#{$prefix}offcanvas-border-color);
+        border-right: var(--#{$prefix}offcanvas-border-width) solid
+          var(--#{$prefix}offcanvas-border-color);
         transform: translateX(-100%);
       }
 
@@ -58,7 +60,8 @@
         top: 0;
         right: 0;
         width: var(--#{$prefix}offcanvas-width);
-        border-left: var(--#{$prefix}offcanvas-border-width) solid var(--#{$prefix}offcanvas-border-color);
+        border-left: var(--#{$prefix}offcanvas-border-width) solid
+          var(--#{$prefix}offcanvas-border-color);
         transform: translateX(100%);
       }
 
@@ -68,7 +71,8 @@
         left: 0;
         height: var(--#{$prefix}offcanvas-height);
         max-height: 100%;
-        border-bottom: var(--#{$prefix}offcanvas-border-width) solid var(--#{$prefix}offcanvas-border-color);
+        border-bottom: var(--#{$prefix}offcanvas-border-width) solid
+          var(--#{$prefix}offcanvas-border-color);
         transform: translateY(-100%);
       }
 
@@ -77,7 +81,8 @@
         left: 0;
         height: var(--#{$prefix}offcanvas-height);
         max-height: 100%;
-        border-top: var(--#{$prefix}offcanvas-border-width) solid var(--#{$prefix}offcanvas-border-color);
+        border-top: var(--#{$prefix}offcanvas-border-width) solid
+          var(--#{$prefix}offcanvas-border-color);
         transform: translateY(100%);
       }
 
@@ -93,7 +98,7 @@
       }
     }
 
-    @if not ($infix == "") {
+    @if not($infix == '') {
       @include media-breakpoint-up($next) {
         --#{$prefix}offcanvas-height: auto;
         --#{$prefix}offcanvas-border-width: 0;
@@ -117,20 +122,26 @@
 }
 
 .offcanvas-backdrop {
-  @include overlay-backdrop($zindex-offcanvas-backdrop, $offcanvas-backdrop-bg, $offcanvas-backdrop-opacity);
+  @include overlay-backdrop(
+    $zindex-offcanvas-backdrop,
+    $offcanvas-backdrop-bg,
+    $offcanvas-backdrop-opacity
+  );
 }
 
 .offcanvas-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--#{$prefix}offcanvas-padding-y) var(--#{$prefix}offcanvas-padding-x);
+  padding: var(--#{$prefix}offcanvas-padding-y)
+    var(--#{$prefix}offcanvas-padding-x);
 
   .btn-close {
-    padding: calc(var(--#{$prefix}offcanvas-padding-y) * .5) calc(var(--#{$prefix}offcanvas-padding-x) * .5);
-    margin-top: calc(-.5 * var(--#{$prefix}offcanvas-padding-y));
-    margin-right: calc(-.5 * var(--#{$prefix}offcanvas-padding-x));
-    margin-bottom: calc(-.5 * var(--#{$prefix}offcanvas-padding-y));
+    padding: calc(var(--#{$prefix}offcanvas-padding-y) * 0.5)
+      calc(var(--#{$prefix}offcanvas-padding-x) * 0.5);
+    margin-top: calc(-0.5 * var(--#{$prefix}offcanvas-padding-y));
+    margin-right: calc(-0.5 * var(--#{$prefix}offcanvas-padding-x));
+    margin-bottom: calc(-0.5 * var(--#{$prefix}offcanvas-padding-y));
   }
 }
 
@@ -141,6 +152,7 @@
 
 .offcanvas-body {
   flex-grow: 1;
-  padding: var(--#{$prefix}offcanvas-padding-y) var(--#{$prefix}offcanvas-padding-x);
+  padding: var(--#{$prefix}offcanvas-padding-y)
+    var(--#{$prefix}offcanvas-padding-x);
   overflow-y: auto;
 }

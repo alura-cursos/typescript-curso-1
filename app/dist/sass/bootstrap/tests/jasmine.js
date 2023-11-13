@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 
-'use strict'
+'use strict';
 
-const path = require('node:path')
+const path = require('node:path');
 
 module.exports = {
   spec_dir: 'scss',
@@ -12,5 +12,5 @@ module.exports = {
   requires: [path.join(__dirname, 'sass-true/register')],
   // Ensure we use `require` so that the require.extensions works
   // as `import` completely bypasses it
-  jsLoader: 'require'
-}
+  jsLoader: 'require',
+};

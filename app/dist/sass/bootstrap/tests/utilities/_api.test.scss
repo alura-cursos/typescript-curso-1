@@ -1,39 +1,41 @@
-@import "../../functions";
-@import "../../variables";
-@import "../../variables-dark";
-@import "../../maps";
-@import "../../mixins";
+@import '../../functions';
+@import '../../variables';
+@import '../../variables-dark';
+@import '../../maps';
+@import '../../mixins';
 
 $utilities: ();
 
-@include describe("utilities/api") {
-  @include it("generates utilities for each breakpoints") {
+@include describe('utilities/api') {
+  @include it('generates utilities for each breakpoints') {
     $utilities: (
       margin: (
         property: margin,
-        values: auto
+        values: auto,
       ),
       padding: (
         property: padding,
         responsive: true,
-        values: 1rem
+        values: 1rem,
       ),
       font-size: (
         property: font-size,
-        values: (large: 1.25rem),
-        print: true
-      )
+        values: (
+          large: 1.25rem,
+        ),
+        print: true,
+      ),
     ) !global;
 
     $grid-breakpoints: (
       xs: 0,
       sm: 333px,
-      md: 666px
+      md: 666px,
     ) !global;
 
     @include assert() {
       @include output() {
-        @import "../../utilities/api";
+        @import '../../utilities/api';
       }
 
       @include expect() {
@@ -69,7 +71,6 @@ $utilities: ();
           }
         }
       }
-
     }
   }
 }

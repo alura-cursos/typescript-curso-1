@@ -1,8 +1,9 @@
 $color-mode-type: media-query;
 
-@import "../../bootstrap";
+@import '../../bootstrap';
 
-@include describe("global $color-mode-type: media-query") {
-  @include it("compiles entirely Bootstrap CSS with media-query color mode") { // stylelint-disable-line block-no-empty
+@include describe('global $color-mode-type: media-query') {
+  @include it('compiles entirely Bootstrap CSS with media-query color mode') {
+    // stylelint-disable-line block-no-empty
   }
 }

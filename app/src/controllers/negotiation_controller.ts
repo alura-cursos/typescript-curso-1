@@ -6,6 +6,7 @@ import { DaysOfWeek } from '../enums/daysOfWeek.js';
 import { loginTimeExecution } from '../decorators/login-time-execution.js';
 import { inspect } from '../decorators/inspect.js';
 import { domInjector } from '../decorators/dom-injector.js';
+import { NegotiationsService } from '../services/negotiations-services.js';
 
 export class NegotiationController {
   @domInjector('#data')
@@ -20,6 +21,7 @@ export class NegotiationController {
   private negotiations = new Negotiations();
   private messageView = new MessageView('#messageView');
   private negotiationsView = new NegotiationView('#negotiationView');
+  private negotiationsService = new NegotiationsService();
 
   constructor() {
     this.negotiationsView.updated(this.negotiations);
@@ -40,8 +42,19 @@ export class NegotiationController {
     }
 
     this.negotiations.add(negotiation);
+    console.log(negotiation);
     this.clearForm();
     this.updatedView();
+  }
+
+  public importData(): void {
+    this.negotiationsService.getNegotiationsToday()
+      .then(negotiationToday => {
+        for (let negotiation of negotiationToday) {
+          this.negotiations.add(negotiation);
+        }
+        this.negotiationsView.updated(this.negotiations);
+      });
   }
 
   private isDayUtil(data: Date) {

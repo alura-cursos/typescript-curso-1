@@ -9,12 +9,13 @@ import { View } from './view.js';
 export class NegotiationView extends View {
     template(model) {
         return `
-      <table class="table table-sm table-info table-striped table-hover shadow-sm">
+      <table class="table table-sm table-secondary table-striped table-hover shadow-sm">
+
         <thead>
           <tr class="text-uppercase">
-            <th class="text-info">Data</th>
-            <th class="text-info">Quantidade</th>
-            <th class="text-info">Valor</th>
+            <th class="text-default">Data</th>
+            <th class="text-default">Quantidade</th>
+            <th class="text-default">Valor</th>
           </tr>
         </thead>
 
@@ -23,10 +24,10 @@ export class NegotiationView extends View {
             .list()
             .map(item => {
             return `
-                <tr class="font-weight-bold text-light">
-                  <td>${this.formatDate(item.data)}</td>
-                  <td>${item.quantity}</td>
-                  <td>${item.value}</td>
+                <tr class="fw-medium fs-5">
+                  <td class="text-table-indigo">${this.formatDate(item.data)}</td>
+                  <td class="text-table-indigo">${item.quantity}</td>
+                  <td class="text-table-indigo">${item.value}</td>
                 </tr>
               `;
         })

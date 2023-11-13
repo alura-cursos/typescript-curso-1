@@ -23,7 +23,8 @@
 
 .nav-link {
   display: block;
-  padding: var(--#{$prefix}nav-link-padding-y) var(--#{$prefix}nav-link-padding-x);
+  padding: var(--#{$prefix}nav-link-padding-y)
+    var(--#{$prefix}nav-link-padding-x);
   @include font-size(var(--#{$prefix}nav-link-font-size));
   font-weight: var(--#{$prefix}nav-link-font-weight);
   color: var(--#{$prefix}nav-link-color);
@@ -67,10 +68,13 @@
   --#{$prefix}nav-tabs-link-active-border-color: #{$nav-tabs-link-active-border-color};
   // scss-docs-end nav-tabs-css-vars
 
-  border-bottom: var(--#{$prefix}nav-tabs-border-width) solid var(--#{$prefix}nav-tabs-border-color);
+  border-bottom: var(--#{$prefix}nav-tabs-border-width) solid
+    var(--#{$prefix}nav-tabs-border-color);
 
   .nav-link {
-    margin-bottom: calc(-1 * var(--#{$prefix}nav-tabs-border-width)); // stylelint-disable-line function-disallowed-list
+    margin-bottom: calc(
+      -1 * var(--#{$prefix}nav-tabs-border-width)
+    ); // stylelint-disable-line function-disallowed-list
     border: var(--#{$prefix}nav-tabs-border-width) solid transparent;
     @include border-top-radius(var(--#{$prefix}nav-tabs-border-radius));
 
@@ -91,12 +95,13 @@
 
   .dropdown-menu {
     // Make dropdown border overlap tab border
-    margin-top: calc(-1 * var(--#{$prefix}nav-tabs-border-width)); // stylelint-disable-line function-disallowed-list
+    margin-top: calc(
+      -1 * var(--#{$prefix}nav-tabs-border-width)
+    ); // stylelint-disable-line function-disallowed-list
     // Remove the top rounded corners here since there is a hard edge above the menu
     @include border-top-radius(0);
   }
 }
-
 
 //
 // Pills
@@ -119,7 +124,6 @@
     @include gradient-bg(var(--#{$prefix}nav-pills-link-active-bg));
   }
 }
-
 
 //
 // Underline
@@ -153,7 +157,6 @@
   }
 }
 
-
 //
 // Justified variants
 //
@@ -181,7 +184,6 @@
     width: 100%; // Make sure button will grow
   }
 }
-
 
 // Tabbable tabs
 //
