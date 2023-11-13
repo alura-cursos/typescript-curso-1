@@ -14,6 +14,8 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/space-before-function-paren": "off",
     "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-useless-constructor": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/prefer-readonly": "off",

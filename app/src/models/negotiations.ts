@@ -1,6 +1,7 @@
-import { Negotiation } from './negotiation.js';
+import { type IPrintable } from '../interfaces/IPrintable.js';
+import { type Negotiation } from './negotiation.js';
 
-export class Negotiations {
+export class Negotiations implements IPrintable {
   private negotiations: Array<Negotiation> = [];
 
   public add(negotiation: Negotiation) {
@@ -9,5 +10,9 @@ export class Negotiations {
 
   public list(): ReadonlyArray<Negotiation> {
     return this.negotiations;
+  }
+
+  public convertForText(): string {
+    return JSON.stringify(this.negotiations, null, 2)
   }
 }

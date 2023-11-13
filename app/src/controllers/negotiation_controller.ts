@@ -7,6 +7,7 @@ import { loginTimeExecution } from '../decorators/login-time-execution.js';
 import { inspect } from '../decorators/inspect.js';
 import { domInjector } from '../decorators/dom-injector.js';
 import { NegotiationsService } from '../services/negotiations-services.js';
+import { printOut } from '../utils/print-out.js';
 
 export class NegotiationController {
   @domInjector('#data')
@@ -42,7 +43,9 @@ export class NegotiationController {
     }
 
     this.negotiations.add(negotiation);
-    console.log(negotiation);
+
+    printOut(negotiation, this.negotiations);
+
     this.clearForm();
     this.updatedView();
   }
