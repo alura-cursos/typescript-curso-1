@@ -8,3 +8,4 @@ export function inspect() {
         return descriptor;
     };
 }
+//# sourceMappingURL=inspect.js.map

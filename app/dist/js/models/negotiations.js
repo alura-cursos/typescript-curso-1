@@ -16,3 +16,4 @@ export class Negotiations {
             JSON.stringify(negotiations.list());
     }
 }
+//# sourceMappingURL=negotiations.js.map

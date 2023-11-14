@@ -17,3 +17,4 @@ export function loginTimeExecution(inSeconds = false) {
         return descriptor;
     };
 }
+//# sourceMappingURL=login-time-execution.js.map

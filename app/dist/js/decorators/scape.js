@@ -9,3 +9,4 @@ export function scape(target, propertyKey, descriptor) {
     };
     return descriptor;
 }
+//# sourceMappingURL=scape.js.map
