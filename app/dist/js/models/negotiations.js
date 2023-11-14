@@ -11,4 +11,8 @@ export class Negotiations {
     convertForText() {
         return JSON.stringify(this.negotiations, null, 2);
     }
+    isEqual(negotiations) {
+        return JSON.stringify(this.negotiations) ===
+            JSON.stringify(negotiations.list());
+    }
 }

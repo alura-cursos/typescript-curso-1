@@ -1,6 +1,6 @@
-import { type IPrintable } from '../interfaces/IPrintable.js';
+import { type IModel } from '../interfaces/IModel.js';
 
-export class Negotiation implements IPrintable {
+export class Negotiation implements IModel<Negotiation> {
   constructor(
     private _data: Date,
     public readonly quantity: number,
@@ -35,5 +35,11 @@ export class Negotiation implements IPrintable {
       Quantidade: ${this.quantity},
       Value: ${this.value}
     `;
+  }
+
+  public isEqual(negotiation: Negotiation): boolean {
+    return this.data.getDate() === negotiation.data.getDate() &&
+      this.data.getMonth() === negotiation.data.getMonth() &&
+      this.data.getFullYear() === negotiation.data.getFullYear()
   }
 }

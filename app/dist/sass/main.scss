@@ -1,7 +1,24 @@
 @import './global/global';
 
+* {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $zinc-700;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $indigo-400;
+    border-radius: 1rem;
+  }
+}
+
 body {
   background-color: $zinc-800;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .button_default {
