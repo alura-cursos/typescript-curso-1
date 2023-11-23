@@ -1,0 +1,82 @@
+@import './global/global';
+
+* {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $zinc-700;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $indigo-400;
+    border-radius: 1rem;
+  }
+}
+
+body {
+  background-color: $zinc-800;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.button_default {
+  @extend .btn;
+
+  background: $indigo-500;
+  color: $zinc-200;
+
+  font-weight: 600;
+  padding-inline: 2rem;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: $indigo-700;
+    color: $indigo-200;
+  }
+}
+
+.form-default {
+  @extend .form-control;
+
+  width: 100%;
+
+  background-color: $zinc-700;
+
+  padding-inline: 2rem;
+  border: 2px solid $indigo-400;
+  border-radius: 50px;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $zinc-500;
+
+  transition: all 0.2s ease-in-out;
+
+  &::placeholder {
+    color: $zinc-400;
+  }
+
+  &:focus,
+  &:focus-visible {
+    outline: none;
+    box-shadow: none;
+
+    border-color: $indigo-500;
+
+    background-color: $zinc-800;
+    color: $indigo-300;
+  }
+}
+
+.text-default {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.08rem;
+  color: $indigo-500 !important;
+}
+
+.text-table-indigo {
+  color: $indigo-300 !important;
+}
